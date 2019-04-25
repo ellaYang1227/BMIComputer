@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI計算器</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- 自訂 -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome Icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+    <section id="header">
+        <div class="container">
+            <div class="row justify-content-md-center align-items-center">
+                <div class="col-md-auto logo">
+                    <img src="images/BMICLogo.png" alt="BMI Logo"></div>
+                <div class="col-md-6 col-lg-6 inputBlock">
+                    <div class="form-group">
+                        <label>身高 cm</label><input type="text" class="form-control" id="height" placeholder="請輸入身高"
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label>體重 kg</label><input type="text" class="form-control" id="bodyWeight" placeholder="請輸入體重"
+                            autocomplete="off">
+                    </div>
+                </div>
+                <div class="col-md-auto status calculation">
+                    <!-- BMI 計算 按鈕-->
+                    <button type="button" class="btn" id="btn-send" disabled>看結果</button>
+                    <a href="#" id="btn-clear"><img src="images/icons_loop.png" alt="icons_loop"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="main">
+        <div class="container">
+            <h1>BMI 紀錄</h1>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12 col-lg-9 col-xl-8">
+                    <ul class="list-unstyled BMIList"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="footer">
+        <img src="images/BMICLogo.png" alt="BMI Logo">
+    </section>
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+        </script>
+
+    <!-- 自訂 -->
+    <script src="js/all.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,597 @@
+@charset "utf-8";
+
+html {
+    height: 100%;
+}
+
+body{
+    font-family: 'Microsoft JhengHei';
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*********************************************/
+/* header */
+/*********************************************/
+
+#header{
+    background: #424242;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#header .inputBlock{
+    padding-left: 50px;
+    padding-right: 50px;
+}/* 輸入區塊 */
+
+#header .inputBlock label{
+    font-size: 18px;
+    color: #FFD366;
+    margin-bottom: 0;
+}/* 輸入區塊 標籤 */
+
+#header .inputBlock input{
+    background: rgba(255,255,255,0.18);
+    border: 2px solid #FFD366;
+    border-radius: 10px;
+    font-size: 24px;
+    line-height: 28px;
+    color: #fff;
+}/* 輸入區塊 input */
+
+#header .inputBlock input:focus{
+    color: rgba(255,255,255,0.5);
+    /* background-color: #fff; */
+    border-color: #ffe196;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255,211,102,.25);
+}/* 輸入區塊 input */
+
+#header .inputBlock input.error{
+    border: 2px solid #FF1200;
+}/* 輸入區塊 input (錯誤)*/
+
+#header .inputBlock input.error:focus{
+    color: rgba(255,255,255,0.5);
+    /* background-color: #fff; */
+    border-color: #cc0e00;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(204,14,0,.25);
+}/* 輸入區塊 input (錯誤) */
+
+/* 輸入區塊 input placeholder*/
+#header .inputBlock ::-webkit-input-placeholder { 
+    color: rgba(255,255,255,0.5);; 
+}/*webkit 專用*/
+
+#header .inputBlock input::-moz-placeholder { 
+    color: rgba(255,255,255,0.5);; 
+}/*Firefox 專用*/
+
+#header .inputBlock:-ms-input-placeholder{
+    color: rgba(255,255,255,0.5);;
+}/*IE10 專用*/
+
+#header .inputBlock font{
+    font-size: 15px;
+    padding-top: 3px;
+    padding-left: 1rem;
+    display: inline-block;
+    color: #FF1200;
+}/* 輸入區塊 input 驗證 錯誤文字 */
+
+#header .inputBlock font i{
+    padding-right: 3px;
+}/* 輸入區塊 input 驗證 錯誤文字 ICON*/
+
+#header .status{
+	display: flex;
+    align-items: center;
+	justify-content: center;
+}/* BMI 計算 狀態 (共用) */
+
+#header .status,
+#header .btn{
+    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+}/* BMI 計算 狀態 (共用) */
+
+#header .btn:focus {
+    box-shadow: none;
+}
+
+#header .status .btn{
+    margin-right: 20px;
+    position: relative;
+}/* BMI 計算 狀態 (共用) */
+
+#header .status .btn small{
+    font-size: 14px;
+    display: block;
+    line-height: 17px;
+}/* BMI 計算 狀態 (共用) */
+
+#header .status #btn-clear,
+#header .status #btn-recalculate{
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}/* BMI 計算 狀態 清除輸入img(共用) */
+
+#header .status .recalculateBlock #text-recalculate{
+	font-size: 14px;
+	color: #fff;
+	display: block;
+	line-height: 20px;
+}/* BMI 計算 狀態 清除輸入文字(共用) */
+
+#header .status.calculation{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}/* BMI 計算 - 看結果 (共用) */
+
+#header .status #btn-recalculate{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+}
+
+#header .status .btn{
+    border-width: 6px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    padding: 0;
+}/* BMI 計算 按鈕 (共用) */
+
+#header .status #btn-send{
+    font-size: 24px;
+    line-height: 25px;
+    color: #424242;
+    background: #FFD366;
+    margin-right: 0;
+}/* BMI 計算 按鈕 */
+
+#header .status #btn-send:active{
+    background: #DEA921;
+    box-shadow: none;
+}/* BMI 計算 按鈕 */
+
+#header .status #btn-send:hover{
+    background: #FFD366;
+    box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
+}/* BMI 計算 按鈕 */
+
+#header .status #btn-send:focus,
+#header .status #btn-send:disabled{
+    box-shadow: none;
+}/* BMI 計算 按鈕 */
+
+#header .calculation #btn-clear{
+    background: #FFF;
+    border-color: #FFF;
+}
+
+#header .status.calculation #btn-clear:hover,
+#header .status.calculation #btn-clear:focus{
+    background: #e5e5e5;
+    border-color: #e5e5e5;
+    box-shadow: 0 1px 2px 3px rgba(242,242,242,0.3);
+}
+
+#header .status #btn-clear:hover,
+#header .status #btn-clear:focus,
+#header .status #btn-recalculate:hover,
+#header .status #btn-recalculate:focus{
+    background: #fff;
+    border-color: #fff;
+    box-shadow: 0 1px 2px 3px rgba(242,242,242,0.3);
+}
+
+#header .status .btn-status{
+    opacity: 1;
+}/* BMI 計算 狀態圖 (共用) */
+
+/*** BMI 計算 狀態 - 理想 ***/
+#header .status-ideal{
+    color: #86D73F;
+}
+
+#header .status-ideal .btn{
+    border-color: #86D73E;
+    color: #86D73F;
+}
+
+#header .status-ideal #btn-recalculate{
+    background: #86D73E;
+    border-color: #86D73E;
+}
+
+/*** BMI 計算 狀態 - 過輕 ***/
+#header .status-tooLight{
+    color: #31BAF9;
+}
+
+#header .status-tooLight .btn{
+    border-color: #31BAF9;
+    color: #31BAF9;
+}
+
+#header .status-tooLight #btn-recalculate{
+    background: #31BAF9;
+    border-color: #31BAF9;
+}
+
+
+/*** BMI 計算 狀態 - 過重 ***/
+#header .status-tooHeavy{
+    color: #FF982D;
+}
+
+#header .status-tooHeavy .btn{
+    border-color: #FF982D;
+    color: #FF982D;
+}
+
+#header .status-tooHeavy #btn-recalculate{
+    background: #FF982D;
+    border-color: #FF982D;
+}
+
+/*** BMI 計算 狀態 - 輕度肥胖 ***/
+#header .status-mildObesity{
+    color: #FF6C02;
+}
+
+#header .status-mildObesity .btn{
+    border-color: #FF6C02;
+    color: #FF6C02;
+}
+
+#header .status-mildObesity #btn-recalculate{
+    background: #FF6C02;
+    border-color: #FF6C02;
+}
+
+/*** BMI 計算 狀態 - 中度肥胖 ***/
+#header .status-moderateObesity{
+    color: #FF6C02;
+}
+
+#header .status-moderateObesity .btn{
+    border-color: #FF6C02;
+    color: #FF6C02;
+}
+
+#header .status-moderateObesity #btn-recalculate{
+    background: #FF6C02;
+    border-color: #FF6C02;
+}
+
+/*** BMI 計算 狀態 - 重度肥胖 ***/
+#header .status-severeObesity{
+    color: #FF1200;
+}
+
+#header .status-severeObesity .btn{
+    border-color: #FF1200;
+    color: #FF1200;
+}
+
+#header .status-severeObesity #btn-recalculate{
+    background: #FF1200;
+    border-color: #FF1200;
+}
+
+@media (max-width: 767px) {
+    #header {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }    
+    #header .logo{
+        text-align: center;
+    }
+    
+    #header .logo img{
+        width: 90px;
+    }
+    
+    #header .inputBlock {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    #header .status,
+    #header .btn {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    #header .status .btn {
+        border-width: 4px;
+        width: 96px;
+        height: 96px;
+    }
+    #header .status #btn-send {
+        font-size: 18px;
+        line-height: 20px;
+        margin-left: 26px;
+    }/* BMI 計算 按鈕 */
+	
+	#header .status .recalculateBlock #text-recalculate {
+	    font-size: 12px;
+	    line-height: 18px;
+    }/* BMI 計算 狀態 清除輸入文字(共用) */
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    #header .logo img{
+    width: 100px;
+    }
+
+    #header .inputBlock{
+        padding-left: 30px;
+        padding-right: 30px;
+    }/* 輸入區塊 */
+
+    #header .status .btn {
+        border-width: 4px;
+        width: 110px;
+        height: 110px;
+    }
+}
+
+
+/*********************************************/
+/* main */
+/*********************************************/
+
+#main{
+   padding: 30px 0;
+   background-color: #f5f5f5;
+   flex: 1;
+}
+
+#main h1{
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    color: #424242;
+    line-height: 28px;
+    padding-bottom: 10px;
+}/* 主標題 */
+
+#main ul.BMIList > li{
+   color: #4A4A4A;
+   background: #FFFFFF;
+   margin-bottom: 20px;
+}/* 狀態結果 單列(共用) */
+
+#main ul.BMIList > li,
+#main ul.BMIList > li h2{
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: 600;
+ }/* 狀態結果 單列(共用) */
+
+
+#main ul.BMIList .statusTitle h2{
+    text-align: center;
+    margin: 5px 15px 5px 0;
+}/* 狀態結果 單列 標題(共用) */
+
+
+#main ul.BMIList > li > ul{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}/* 狀態結果 單列 內容文字(共用) */
+
+#main ul.BMIList > li > ul >li{
+    display: flex;
+    align-items: center;
+}/* 狀態結果 單列 內容文字(共用) */
+
+#main ul.BMIList > li > ul > li > small{
+    padding-right: 5px;
+    color: #424242;
+    font-size: 10px;
+}/* 狀態結果 單列 內容文字(共用) */
+
+#main ul.BMIList .delItemBtn .btn{
+    font-weight: 600;
+}/* 狀態結果 單列 刪除按鈕*/
+
+#main ul.BMIList .delItemBtn i{
+    padding-right: 3px;
+}/* 狀態結果 單列 刪除按鈕 icon*/
+
+/*** BMI 計算 狀態(共用) ***/
+#main .statusList-ideal .statusLine-ideal,
+#main .statusList-tooLight .statusLine-tooLight,
+#main .statusList-tooHeavy .statusLine-tooHeavy,
+#main .statusList-mildObesity .statusLine-mildObesity,
+#main .statusList-moderateObesity .statusLine-moderateObesity,
+#main .statusList-severeObesity .statusLine-severeObesity{
+    width: 100%;
+    height: 5px;
+}
+
+/*** BMI 計算 狀態 - 理想 ***/
+#main .statusList-ideal .statusLine-ideal{
+    background: #86D73F;
+    box-shadow: 2px 0 3px 0 rgba(133,215,63,0.29);
+}
+
+/*** BMI 計算 狀態 - 過輕 ***/
+#main .statusList-tooLight .statusLine-tooLight{
+    background: #31BAF9;
+    box-shadow: 2px 0 3px 0 rgba(49,186,249,0.29);
+}
+
+/*** BMI 計算 狀態 - 過重 ***/
+#main .statusList-tooHeavy .statusLine-tooHeavy{
+    background: #FF982D;
+    box-shadow: 2px 0 3px 0 rgba(255,152,45,0.29);  
+}
+
+/*** BMI 計算 狀態 - 輕度肥胖 ***/
+#main .statusList-mildObesity .statusLine-mildObesity{
+    background: #FF6C02;
+    box-shadow: 2px 0 3px 0 rgba(255,108,2,0.29);
+}
+
+/*** BMI 計算 狀態 - 中度肥胖 ***/
+#main .statusList-moderateObesity .statusLine-moderateObesity{
+    background: #FF6C02;
+    box-shadow: 2px 0 3px 0 rgba(255,108,2,0.29);
+}
+
+/*** BMI 計算 狀態 - 重度肥胖 ***/
+#main .statusList-severeObesity .statusLine-severeObesity{
+    background: #FF1200;
+    box-shadow: 2px 0 3px 0 rgba(255,17,0,0.29);
+}
+
+@media (max-width: 767px) {
+    #main ul.BMIList > li{
+        padding-bottom: 5px;
+    }/* 狀態結果 單列(共用) */
+
+#main ul.BMIList .statusTitle,
+#main ul.BMIList .measureDate,
+#main ul.BMIList .delItemBtn{
+    width: 100%;
+    justify-content: center;
+}/* 狀態結果 單列 狀態標題 & 測量時間 & 刪除按鈕 */
+
+#main ul.BMIList > li > ul >li{
+    width: 30%;
+    margin: 0 auto;
+}/* 狀態結果 單列 內容文字(共用) */
+
+#main ul.BMIList .measureDate{
+    text-align: center;
+}/* 狀態結果 單列 測量時間  */
+
+#main ul.BMIList .measureDate small{
+    padding-right: 0;
+}/* 狀態結果 單列 測量時間  */
+
+#main ul.BMIList .delItemBtn{
+    position: relative;
+}/* 狀態結果 單列 刪除按鈕*/
+
+#main ul.BMIList .delItemBtn .btn{
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    border-radius: 50px;
+    border-width: 0;
+    padding: 2px 10px;
+    background: #FFFFFF;
+}/* 狀態結果 單列 刪除按鈕*/
+
+#main ul.BMIList .delItemBtn .btn:hover{
+    background-color: #dc3545;
+}/* 狀態結果 單列 刪除按鈕*/
+
+}
+
+@media (min-width: 768px) {
+    #main{
+        padding: 50px 0;
+     }
+     
+     #main h1{
+         padding-bottom: 20px;
+     }/* 主標題 */
+
+    #main ul.BMIList > li{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+     }/* 狀態結果 單列(共用) */
+    
+    #main ul.BMIList .statusTitle h2{
+        text-align: left;
+        min-width: 80px;
+        margin: 0 40px 0 30px;
+    }/* 狀態結果 單列 標題(共用) */
+
+    /*** BMI 計算 狀態(共用) ***/
+    #main .statusList-ideal .statusLine-ideal,
+    #main .statusList-tooLight .statusLine-tooLight,
+    #main .statusList-tooHeavy .statusLine-tooHeavy,
+    #main .statusList-mildObesity .statusLine-mildObesity,
+    #main .statusList-moderateObesity .statusLine-moderateObesity,
+    #main .statusList-severeObesity .statusLine-severeObesity{
+        width: 7px;
+        height: 62px;
+    }
+    
+    #main ul.BMIList > li,
+    #main ul.BMIList .statusTitle h2{
+    font-size: 20px;
+    }/* 狀態結果 單列(共用) */
+
+    #main ul.BMIList > li > ul > li > small{
+    padding-right: 5px;
+    font-size: 12px;
+    }/* 狀態結果 單列 內容文字(共用) */
+    
+    
+    #main ul.BMIList > li > ul > li:not(:last-child) {
+    margin-right: 0;
+    }
+
+    #main ul.BMIList > li > ul >li{
+        min-width: 110px;
+    }/* 狀態結果 單列 內容文字(共用) */
+    
+    #main ul.BMIList > li > ul >li.measureDate,
+    #main ul.BMIList > li > ul >li.delItemBtn{
+        min-width: auto;
+    }/* 狀態結果 單列 內容文字 */
+}
+
+@media (min-width: 768px) and (max-width: 1199px){
+    #main ul.BMIList > li > ul > li:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #main ul.BMIList > li > ul > li:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+/*********************************************/
+/* footer */
+/*********************************************/
+
+#footer{
+    background: #FFD366;
+    text-align: center;
+    position: relative;
+}
+
+#footer img{
+    width: 55px;
+    padding: 15px 0;
+    filter: drop-shadow(55px 0 #424242);
+    position: relative;
+    margin-left: -110px;
+}
